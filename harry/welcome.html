@@ -1,0 +1,82 @@
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>welcome</title>
+</head>
+<body >
+    
+
+<div class="background">
+
+<?php
+
+$uname = "veeral" ;
+$pass = "veeral" ;
+
+session_start ();
+
+if(isset($_SESSION ['uname'])){
+    ?>
+<div class="welcome">
+
+<?php echo "<h1> welcome " .$_SESSION[ 'uname']." </h1> ";   ?>
+</div>
+
+<div class="goodluck">
+<?php echo "<a href = 'yhi.php'> good luck </a> <br>"; ?>
+</div>
+
+<div class="logout">
+<?php echo " <br> <a href = 'logout.php' > <input type= button value= logout name= logout> </a>" ; ?> </div>
+
+
+<?php
+}
+ else{
+
+    if($_POST['uname'] == $uname && $_POST['pass'] == $pass){
+$_SESSION['uname'] =$uname;
+
+echo "<script> location.href='Welcome.php' </script>";
+    }
+
+
+else {
+    
+    echo "<script> username or password is incorrect!! </script>";
+echo "<script> location.href='index.php' </script>";
+
+}
+}
+
+?>
+
+
+</div>
+
+<style>
+
+.backgraound{
+
+background-image: linear-gradient(to right bottom, #00c9ff, #fc00ff);   
+
+}
+
+.welcome{
+size
+
+}
+
+
+
+
+
+</style>
+
+
+</body>
+</html>
